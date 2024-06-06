@@ -20,21 +20,20 @@ export default {
 };
 
 export const Default = {
-  args:{
-    task:{
-      "id": "1",
-      "title": "Default Tasks",
-      "state": "TASK_INBOX"
+  args: {
+    task: {
+      id: '1',
+      title: 'Test Task',
+      state: 'TASK_INBOX',
     },
   },
 };
 
 export const Pinned = {
-  args:{
-    task:{
-      "id": "1",
-      "title": "Pinned Tasks",
-      "state": "TASK_PINNED"
+  args: {
+    task: {
+      ...Default.args.task,
+      state: 'TASK_PINNED',
     },
   },
 };
@@ -42,9 +41,8 @@ export const Pinned = {
 export const Archived = {
   args: {
     task: {
-      "id": "1",
-      "title": "Archived Tasks",
-      "state": "TASK_ARCHIVED"
+      ...Default.args.task,
+      state: 'TASK_ARCHIVED',
     },
   },
 };
