@@ -22,7 +22,7 @@ export const MockedState = {
 };
 
 // A super-simple mock of a redux store
-const Mockstore = ({ taskboxState, children }) => (
+export const Mockstore = ({ taskboxState, children }) => (
   <Provider
     store={configureStore({
       reducer: {

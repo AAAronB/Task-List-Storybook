@@ -1,16 +1,20 @@
 
 import InboxScreen from './InboxScreen';
+import { Mockstore } from './TaskList.stories';
 import { MockedState } from './TaskList.stories';
-import { Provider } from 'react-redux';
+
 
 export default {
-  component: InboxScreen,
-  title: 'InboxScreen',
-  decorators: [(story) => <Provider store={store}>{story()}</Provider>],
-  tags: ['autodocs'],
-};
-
-
-export const Default = {};
-
-export const Error = {};
+    component: InboxScreen,
+    title: 'InboxScreen',
+    decorators: [(story) => <Mockstore taskboxState={MockedState}>{story()}</Mockstore>], // Default setup
+    tags: ['autodocs'],
+  };
+  
+  export const Default = {
+    decorators: [(story) => <Mockstore taskboxState={MockedState}>{story()}</Mockstore>],
+  };
+  
+  export const Error = {
+    decorators: [(story) => <Mockstore taskboxState={{ ...MockedState, error: 'Something went wrong' }}>{story()}</Mockstore>],
+  };
